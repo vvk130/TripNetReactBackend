@@ -1,0 +1,6 @@
+@TripNetReactBackend_HostAddress = http://localhost:5296
+
+GET {{TripNetReactBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
