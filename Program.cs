@@ -1,15 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using Sieve.Models;
+using Sieve.Services;
+using SievePackage;
+using TripNetReactBackend.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<MyDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString(@"DefaultConnection")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.Configure<SieveOptions>(builder.Configuration.GetSection("Sieve"));
+builder.Services.AddScoped<ISieveProcessor, MySieveProcessor>();
 
 var app = builder.Build();
 
@@ -22,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseAuthorization();
 

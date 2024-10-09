@@ -1,21 +1,25 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace JourneyApp1.Server.Models;
+namespace TripNetReactBackend.Models;
 
-public class Journey
+public partial class Journey
 {
-    [Key]
     public int Id { get; set; }
 
-    public DateTime? DepartTime { get; set; }
+    public DateTime? DepartureDateTime { get; set; }
 
-    public DateTime? ReturnTime { get; set; }
+    public DateTime? ReturnDateTime { get; set; }
 
-    public int DepartStationId { get; set; }
+    public int DepartureStationId { get; set; }
 
     public int ReturnStationId { get; set; }
 
     public int? Distance { get; set; }
 
     public int? Duration { get; set; }
+
+    public virtual Station DepartureStation { get; set; } = null!;
+
+    public virtual Station ReturnStation { get; set; } = null!;
 }

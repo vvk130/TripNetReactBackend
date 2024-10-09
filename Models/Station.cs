@@ -1,20 +1,23 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 using Sieve.Attributes;
-using Sieve.Models;
 
-namespace JourneyApp1.Server.Models;
+namespace TripNetReactBackend.Models;
 
-public class Station : SieveModel
+public partial class Station
 {
-    [Key]
     public int Id { get; set; }
 
     [Sieve(CanFilter = true, CanSort = true)]
-    public string? Name { get; set; }
+    public string? StationName { get; set; }
 
-    public string? Address { get; set; }
+    public string? StationAddress { get; set; }
 
     public string? CoordinateX { get; set; }
 
     public string? CoordinateY { get; set; }
+
+    public virtual ICollection<Journey> JourneyDepartureStations { get; } = new List<Journey>();
+
+    public virtual ICollection<Journey> JourneyReturnStations { get; } = new List<Journey>();
 }
