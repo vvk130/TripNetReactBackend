@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
 using Sieve.Attributes;
 
 namespace TripNetReactBackend.Models;
 
-public partial class Station
+public record StationDetailsDto
 {
     public int Id { get; set; }
+
     public string? StationName { get; set; }
 
     public string? StationAddress { get; set; }
@@ -15,7 +14,12 @@ public partial class Station
 
     public string? CoordinateY { get; set; }
 
-    public virtual ICollection<Journey> JourneyDepartureStations { get; } = new List<Journey>();
+    public int JourneysStartingTotal { get; set; }
 
-    public virtual ICollection<Journey> JourneyReturnStations { get; } = new List<Journey>();
+    public int JourneysStartingAvgDistance { get; set; }
+
+    public int JourneysStartingAvgDuration { get; set; }
+
+    public int JourneysEndingTotal { get; set; }
+
 }

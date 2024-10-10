@@ -6,5 +6,6 @@ public class StationProfile : Profile
     public StationProfile()
     {
         CreateMap<Station, StationDto>();
+        CreateMap<Station, StationDetailsDto>();
     }
 }
