@@ -13,5 +13,6 @@ You have to create appsettings.json file and add connection string
 | **AutoMapper**               | Easy object mapping to Dtos    |
 | **Swagger (Swashbuckle)**    | API documentation              |
 | **Entity Framework Core**    | DB orm                         |
+| **PostgreSQL**               | DB                             |
 
 ## Live application demo
