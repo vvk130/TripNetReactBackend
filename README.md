@@ -1,10 +1,10 @@
-# Running the application
+## Running the application
 
 You have to create appsettings.json file and add connection string
 
-# Project Technologies
+## Project Technologies
 
-# Project Technologies
+## Project Technologies
 
 | **Technology**               | **Description**                |
 | ---------------------------- | ------------------------------ |
@@ -13,4 +13,4 @@ You have to create appsettings.json file and add connection string
 | **AutoMapper**               | Easy object mapping to Dtos    |
 | **Swagger (Swashbuckle)**    | API documentation              |
 
-# Live application demo
+## Live application demo
