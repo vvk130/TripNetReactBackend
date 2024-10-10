@@ -12,5 +12,6 @@ You have to create appsettings.json file and add connection string
 | **Sieve**                    | Pagination, filtering, sorting |
 | **AutoMapper**               | Easy object mapping to Dtos    |
 | **Swagger (Swashbuckle)**    | API documentation              |
+| **Entity Framework Core**    | DB orm                         |
 
 ## Live application demo
