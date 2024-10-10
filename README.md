@@ -16,3 +16,14 @@ You have to create appsettings.json file and add connection string
 | **PostgreSQL**               | DB                             |
 
 ## Live application demo
+
+## About database
+
+### Benchmarks
+
+### Queries in SQL translated by EF core
+
+## Pagination, sorting and filtering
+
+See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
+Item ids and names and sortable and filterable.
