@@ -3,8 +3,9 @@ using Sieve.Models;
 
 namespace TripNetReactBackend.Models;
 
-public class StationDto : SieveModel
+public class StationDto
 {
+    [Sieve(CanFilter = true, CanSort = true)]
     public int Id { get; set; }
 
     [Sieve(CanFilter = true, CanSort = true)]
