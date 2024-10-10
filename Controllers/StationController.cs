@@ -1,3 +1,5 @@
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sieve.Models;
@@ -10,36 +12,20 @@ public class StationController : ControllerBase
 {
     private readonly AppDbContext _context;
     private readonly ISieveProcessor _sieveprosessor;
+    private readonly IMapper _mapper;
 
-    public StationController(AppDbContext context, ISieveProcessor sieveprosessor)
+    public StationController(AppDbContext context, ISieveProcessor sieveprosessor, IMapper mapper)
     {
         _context = context;
         _sieveprosessor = sieveprosessor;
-
-}
-
-// [HttpGet]
-// public async Task<ActionResult<IEnumerable<Station>>> GetStations()
-// {
-//     var stations = await _context.Stations
-//                                   .Take(10) 
-//                                   .ToListAsync();
-
-//     if (stations == null || stations.Count == 0)
-//     {
-//         return NotFound("No stations found.");
-//     }
-
-//     return Ok(stations);
-// }
+        _mapper = mapper;
+    }
 
     [HttpGet]
     public IActionResult GetSortedFilteredModel([FromQuery] SieveModel sieveModel)
     {
-        var models = _context.Stations.AsNoTracking();
+        var models = _context.Stations.ProjectTo<StationDto>(_mapper.ConfigurationProvider);
         models = _sieveprosessor.Apply(sieveModel, models);
         return Ok(models);
     }
-
-
 }

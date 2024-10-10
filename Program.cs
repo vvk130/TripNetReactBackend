@@ -1,3 +1,5 @@
+using System.Reflection;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Sieve.Models;
 using Sieve.Services;
@@ -7,6 +9,7 @@ using TripNetReactBackend.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
 
@@ -19,6 +22,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<SieveOptions>(builder.Configuration.GetSection("Sieve"));
 builder.Services.AddScoped<ISieveProcessor, MySieveProcessor>();
+builder.Services.AddScoped<ISieveProcessor, StationDtoSieveProsessor>();
+
+var config = new MapperConfiguration(cfg => cfg.AddMaps(AppDomain.CurrentDomain.GetAssemblies()));
+var mapper = config.CreateMapper();
 
 var app = builder.Build();
 
