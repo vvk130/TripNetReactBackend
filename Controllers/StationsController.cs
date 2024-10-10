@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
 [ApiController]
-public class StationController : ControllerBase
+public class StationsController : ControllerBase
 {
     private readonly AppDbContext _context;
     private readonly ISieveProcessor _sieveprosessor;
     private readonly IMapper _mapper;
 
-    public StationController(AppDbContext context, ISieveProcessor sieveprosessor, IMapper mapper)
+    public StationsController(AppDbContext context, ISieveProcessor sieveprosessor, IMapper mapper)
     {
         _context = context;
         _sieveprosessor = sieveprosessor;
@@ -47,6 +47,6 @@ public class StationController : ControllerBase
         })
         .ToListAsync(cancellationToken);
 
-        return !stationDetails.Any() ? NotFound() : Ok(stationDetails);
+        return stationDetails.Count == 0 ? NotFound() : Ok(stationDetails);
     }
 }
