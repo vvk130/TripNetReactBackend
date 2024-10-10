@@ -27,3 +27,5 @@ You have to create appsettings.json file and add connection string
 
 See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
 Item ids and names and sortable and filterable.
+
+## Self-reflection
