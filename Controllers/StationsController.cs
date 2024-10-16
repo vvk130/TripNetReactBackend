@@ -49,4 +49,12 @@ public class StationsController : ControllerBase
 
         return stationDetails.Count == 0 ? NotFound() : Ok(stationDetails);
     }
+
+    [HttpGet("next-free-id")]
+    public async Task<ActionResult> GetNextFreeId()
+    {
+        var maxId = await _context.Stations.MaxAsync(station => station.Id);
+        var nextFreeId = maxId + 1; 
+        return Ok(nextFreeId);
+    }
 }
