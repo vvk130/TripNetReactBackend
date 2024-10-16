@@ -6,7 +6,18 @@ using Sieve.Services;
 using SievePackage;
 using TripNetReactBackend.Models;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://journey-app-2024.netlify.app/");
+                      });
+});
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -30,7 +41,6 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// Expose swagger because this is a portfolio project
 app.UseSwagger();
 app.UseSwaggerUI(c =>
     {
@@ -38,6 +48,7 @@ app.UseSwaggerUI(c =>
         c.RoutePrefix = string.Empty; 
     });
 
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
