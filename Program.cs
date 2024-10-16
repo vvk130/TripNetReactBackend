@@ -1,12 +1,14 @@
-using System.Reflection;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Sieve.Models;
 using Sieve.Services;
 using SievePackage;
 using TripNetReactBackend.Models;
+using FluentValidation.AspNetCore;
+using FluentValidation;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+var assembly = typeof(Program).Assembly;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +37,10 @@ builder.Services.AddScoped<ISieveProcessor, MySieveProcessor>();
 builder.Services.AddScoped<ISieveProcessor, StationDtoSieveProsessor>();
 
 builder.Services.AddControllers();
+
+builder.Services.AddProblemDetails();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssembly(assembly);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString(@"DefaultConnection")));

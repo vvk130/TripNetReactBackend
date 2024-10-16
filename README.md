@@ -4,8 +4,6 @@ You have to create appsettings.json file and add connection string
 
 ## Project Technologies
 
-## Project Technologies
-
 | **Technology**               | **Description**                                 |
 | ---------------------------- | ----------------------------------------------- |
 | **.NET Core (ASP.NET Core)** | Modern web api framewrork                       |
@@ -23,7 +21,7 @@ You have to create appsettings.json file and add connection string
 
 ## Live application demo
 
-(In progress)
+[https://journey-app-2024.netlify.app/](https://journey-app-2024.netlify.app/)
 
 ## About database
 
