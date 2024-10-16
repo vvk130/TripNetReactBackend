@@ -32,6 +32,15 @@ public class StationsController : ControllerBase
         return Ok(models);
     }
 
+    [HttpPost("{id}")]
+    public async Task<IActionResult> CreateStation([FromQuery] StationDto stationDto)
+    {
+        var station = _mapper.Map<Station>(stationDto);
+        await _context.Stations.AddAsync(station);
+        await _context.SaveChangesAsync();
+        return Created();
+    }
+
     [HttpGet("{id}")]
     public async Task<ActionResult<List<object>>> GetStationDetailsByIdAsync(int id, CancellationToken cancellationToken)
     {
@@ -50,7 +59,7 @@ public class StationsController : ControllerBase
         return stationDetails.Count == 0 ? NotFound() : Ok(stationDetails);
     }
 
-    [HttpGet("next-free-id")]
+    [HttpGet("next-available-id")]
     public async Task<ActionResult> GetNextFreeId()
     {
         var maxId = await _context.Stations.MaxAsync(station => station.Id);

@@ -10,6 +10,9 @@ public record StationDto
     [Sieve(CanFilter = true, CanSort = true)]
     public string? StationName { get; set; }
 
+    [Sieve(CanFilter = true, CanSort = true)]
+    public string? StationAddress { get; set; }
+
     public string? CoordinateX { get; set; }
 
     public string? CoordinateY { get; set; }
