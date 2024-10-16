@@ -6,16 +6,24 @@ You have to create appsettings.json file and add connection string
 
 ## Project Technologies
 
-| **Technology**               | **Description**                |
-| ---------------------------- | ------------------------------ |
-| **.NET Core (ASP.NET Core)** | Modern web api framewrork      |
-| **Sieve**                    | Pagination, filtering, sorting |
-| **AutoMapper**               | Easy object mapping to Dtos    |
-| **Swagger (Swashbuckle)**    | API documentation              |
-| **Entity Framework Core**    | DB orm                         |
-| **PostgreSQL**               | DB                             |
+| **Technology**               | **Description**                                 |
+| ---------------------------- | ----------------------------------------------- |
+| **.NET Core (ASP.NET Core)** | Modern web api framewrork                       |
+| **Sieve**                    | Pagination, filtering, sorting                  |
+| **AutoMapper**               | Easy object mapping to Dtos                     |
+| **Swagger (Swashbuckle)**    | API documentation                               |
+| **Entity Framework Core**    | DB orm                                          |
+| **Fluent Api**               | Server side validation                          |
+| **ASP.NET Core Identity**    | User login and role management for NET web APIs |
+| **PostgreSQL**               | DB                                              |
+| **React, Typescript**        | Frontend                                        |
+| **Formik**                   | React form state management without tears       |
+| **Yup**                      | Form validation for clientside                  |
+| **Material UI**              | Component library for React                     |
 
 ## Live application demo
+
+(In progress)
 
 ## About database
 
