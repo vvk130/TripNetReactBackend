@@ -5,8 +5,7 @@ public class StationProfile : Profile
 {
     public StationProfile()
     {
-        CreateMap<Station, StationDto>();
-        CreateMap<Station, StationDetailsDto>();
-        CreateMap<StationDto, Station>();
+        CreateMap<Station, StationDto>().ReverseMap();
+        CreateMap<Station, StationDetailsDto>().ReverseMap();
     }
 }

@@ -2,6 +2,12 @@
 
 You have to create appsettings.json file and add connection string
 
+## Live application demo
+
+[https://journey-app-2024.netlify.app/](https://journey-app-2024.netlify.app/)
+Backend Swagger (exposed in production because this is a porfolio application):
+[https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html](https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html)
+
 ## Project Technologies
 
 | **Technology**               | **Description**                                 |
@@ -18,10 +24,6 @@ You have to create appsettings.json file and add connection string
 | **Formik**                   | React form state management without tears       |
 | **Yup**                      | Form validation for clientside                  |
 | **Material UI**              | Component library for React                     |
-
-## Live application demo
-
-[https://journey-app-2024.netlify.app/](https://journey-app-2024.netlify.app/)
 
 ## About database
 
