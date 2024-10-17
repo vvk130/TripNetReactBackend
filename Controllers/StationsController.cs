@@ -33,7 +33,7 @@ public class StationsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateStation([FromQuery] StationDto stationDto)
+    public async Task<IActionResult> CreateStation([FromBody] StationDto stationDto)
     {
         var station = _mapper.Map<Station>(stationDto);
         await _context.Stations.AddAsync(station);

@@ -18,9 +18,9 @@ public record StationDto
 
     public string? CoordinateY { get; set; }
 
-    public class StationValidator : AbstractValidator<Station>
+    public class StationDtoValidator : AbstractValidator<StationDto>
     {
-        public StationValidator()
+        public StationDtoValidator()
         {
             RuleFor(t => t.StationName).MaximumLength(100);
             RuleFor(t => t.StationAddress).MaximumLength(100);
@@ -28,4 +28,5 @@ public record StationDto
             RuleFor(s => s.CoordinateX).Matches(@"^-?([0-8]?[0-9]|90)(\.[0-9]{1,16})$");
         }
     }
+
 }
