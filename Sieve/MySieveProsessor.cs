@@ -19,6 +19,14 @@ namespace SievePackage
                 .CanSort()
                 .CanFilter();
 
+            mapper.Property<Station>(p => p.Id)
+                .CanSort()
+                .CanFilter();
+
+            mapper.Property<Station>(p => p.StationAddress)
+                .CanSort()
+                .CanFilter();
+
             return mapper;
         }
     }
