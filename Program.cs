@@ -25,7 +25,9 @@ builder.Services.AddCors(options =>
                           }
                           else
                           {
-                              policy.WithOrigins("https://journey-app-2024.netlify.app");
+                              policy.WithOrigins("https://journey-app-2024.netlify.app")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
                           }
                       });
 });
