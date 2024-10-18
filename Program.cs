@@ -17,18 +17,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          if (builder.Environment.IsDevelopment())
-                          {
-                              policy.AllowAnyOrigin()
-                                    .AllowAnyHeader()
-                                    .AllowAnyMethod();
-                          }
-                          else
-                          {
                               policy.WithOrigins("https://journey-app-2024.netlify.app")
                                     .AllowAnyHeader()
                                     .AllowAnyMethod();
-                          }
                       });
 });
 
