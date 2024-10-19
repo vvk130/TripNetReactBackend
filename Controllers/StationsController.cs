@@ -26,6 +26,9 @@ public class StationsController : ControllerBase
     public IActionResult GetSortedFilteredStations([FromQuery] SieveModel sieveModel)
     {
         var models = _context.Stations.ProjectTo<StationDto>(_mapper.ConfigurationProvider);
+        if (models is null) { 
+            return NotFound();
+        }
         models = _sieveprosessor.Apply(sieveModel, models, applyPagination: false);
         Request.HttpContext.Response.Headers.Append("X-Total-Count", models.Count().ToString());
         models = _sieveprosessor.Apply(sieveModel, models, applyFiltering: false, applySorting: false);
