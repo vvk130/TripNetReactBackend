@@ -1,6 +1,6 @@
 ## About application
 
-Simple application to show and search for stations on a map. Since Leaflet bound was not configured, the map is centered basedes on the location of the first station. Therefore, not all stations show on the map with the default zoom level.
+Simple application to show and search for stations on a map. Since Leaflet bound was not configured, the map is centered based on the location of the first station. Therefore, not all stations show on the map with the default zoom level.
 
 ## Live application demo
 
@@ -39,6 +39,4 @@ Simple application to show and search for stations on a map. Since Leaflet bound
 
 ## Video
 
-
 https://github.com/user-attachments/assets/4da5d0ba-d4c2-43b8-a1da-9d82ed308ec0
-
