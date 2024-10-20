@@ -11,29 +11,35 @@ Simple application to show and search for stations on a map. Since Leaflet bound
 
 ## Project Technologies
 
-| **Technology**               | **Description**                           |
-| ---------------------------- | ----------------------------------------- |
-| **.NET Core (ASP.NET Core)** | Modern web api framewrork                 |
-| **Sieve**                    | Pagination, filtering, sorting            |
-| **AutoMapper**               | Easy object mapping to Dtos               |
-| **Swagger (Swashbuckle)**    | API documentation                         |
-| **Entity Framework Core**    | DB orm                                    |
-| **Fluent Api**               | Server side validation                    |
-| **PostgreSQL**               | DB                                        |
-| **React, Typescript**        | Frontend                                  |
-| **Formik**                   | React form state management without tears |
-| **Yup**                      | Form validation for clientside            |
-| **Material UI**              | Component library for React               |
-| **Leaflet**                  | Map add on                                |
+| **Technology**                        | **Description**                           |
+| ------------------------------------- | ----------------------------------------- |
+| **.NET Core (ASP.NET Core)**          | Modern web api framewrork                 |
+| **Sieve**                             | Pagination, filtering, sorting            |
+| **AutoMapper**                        | Easy object mapping to Dtos               |
+| **Swagger (Swashbuckle)**             | API documentation                         |
+| **Entity Framework Core**             | DB orm                                    |
+| **Fluent Api**                        | Server side validation                    |
+| **PostgreSQL**                        | DB                                        |
+| **React, Typescript, Tanstack Query** | Frontend                                  |
+| **Formik**                            | React form state management without tears |
+| **Yup**                               | Form validation for clientside            |
+| **Material UI**                       | Component library for React               |
+| **Leaflet**                           | Map add on                                |
 
 ## Pagination, sorting and filtering
 
 - See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
 - Item ids sortable and filterable (exact match), names and addresses sortable and filterable.
 
+## Functions
+
+- Adding a station
+- Paginated Search
+- See items on map
+- Pagination Details from Journey Data
+
 ## In progress
 
-- Connecting post endpoint to adding an item
 - Login and adding Identity API
 - Testing
 
