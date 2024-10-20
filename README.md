@@ -1,3 +1,7 @@
+## About application
+
+Simple application to show and search for stations on a map. Since Leaflet bound was not configured, the map is centered basedes on the location of the first station. Therefore, not all stations show on the map with the default zoom level.
+
 ## Live application demo
 
 - [https://journey-app-2024.netlify.app/](https://journey-app-2024.netlify.app/)
