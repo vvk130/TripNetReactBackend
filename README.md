@@ -1,6 +1,7 @@
 ## Live application demo
 
 - [https://journey-app-2024.netlify.app/](https://journey-app-2024.netlify.app/)
+- Frontend repo: https://github.com/vvk130/trip-fe
 - Backend Swagger (exposed in production because this is a porfolio application):
   [https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html](https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html)
 
