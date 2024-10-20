@@ -36,7 +36,7 @@ Simple application to show and search for stations on a map. Since Leaflet bound
 - Adding a station
 - Paginated Search
 - See items on map
-- Pagination Details from Journey Data
+- Station Details from Journey Data
 
 ## In progress
 
