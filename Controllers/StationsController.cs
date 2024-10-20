@@ -52,8 +52,16 @@ public class StationsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<List<object>>> GetStationDetailsByIdAsync(int id, CancellationToken cancellationToken)
+    public async Task<ActionResult<List<object>>> GetStationDetailsByIdAsync(int id, CancellationToken cancellationToken = default)
     {
+        var station = await _context.Stations.FindAsync(id, cancellationToken);
+
+        if (station == null){
+            return NotFound();
+        }
+
+        var stationDto = _mapper.Map<StationDto>(station);
+
         var stationDetails = await _context.Journeys
         .Where(j => j.DepartureStationId == id || j.ReturnStationId == id)  
         .GroupBy(j => 1)  
@@ -66,7 +74,13 @@ public class StationsController : ControllerBase
         })
         .ToListAsync(cancellationToken);
 
-        return stationDetails.Count == 0 ? NotFound() : Ok(stationDetails);
+        var result = new
+        {
+            stationDto,
+            stationDetails
+        };
+
+        return Ok(result);
     }
 
     [HttpGet("next-available-id")]
