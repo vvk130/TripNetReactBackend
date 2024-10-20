@@ -30,9 +30,16 @@ public class StationsController : ControllerBase
             return NotFound();
         }
         models = _sieveprosessor.Apply(sieveModel, models, applyPagination: false);
-        Request.HttpContext.Response.Headers.Append("X-Total-Count", models.Count().ToString());
+        var count = models.Count();
+        var requestedPageSize = SetPageSizeMax10NotNull(sieveModel.PageSize);
         models = _sieveprosessor.Apply(sieveModel, models, applyFiltering: false, applySorting: false);
-        return Ok(models);
+        var result = new
+        {
+            count,
+            pagesTotal = Math.Ceiling((double)count / (double)requestedPageSize),
+            data = models,
+        };
+        return Ok(result);
     }
 
     [HttpPost]
@@ -68,5 +75,14 @@ public class StationsController : ControllerBase
         var maxId = await _context.Stations.MaxAsync(station => station.Id);
         var nextFreeId = maxId + 1; 
         return Ok(nextFreeId);
+    }
+    private int SetPageSizeMax10NotNull(int? pageSize)
+    {
+        return pageSize switch
+        {
+            null => 10,        
+            > 10 => 10,       
+            _ => pageSize.Value
+        };
     }
 }
