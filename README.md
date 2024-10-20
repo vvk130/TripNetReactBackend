@@ -1,12 +1,8 @@
-## Running the application
-
-You have to create appsettings.json file and add connection string
-
 ## Live application demo
 
 - [https://journey-app-2024.netlify.app/](https://journey-app-2024.netlify.app/)
 - Backend Swagger (exposed in production because this is a porfolio application):
-[https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html](https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html)
+  [https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html](https://tripnetreactbackend-app-20241012.agreeablebay-04f023f8.swedencentral.azurecontainerapps.io/index.html)
 
 ## Project Technologies
 
@@ -28,4 +24,12 @@ You have to create appsettings.json file and add connection string
 ## Pagination, sorting and filtering
 
 See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
-Item ids and names and sortable and filterable.
+Item ids (exact match) and names and sortable and filterable.
+
+## In progress
+
+- Connecting post endpoint to adding an item
+- Login and adding Identity API
+- Testing
+
+## Video

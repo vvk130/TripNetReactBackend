@@ -56,21 +56,22 @@ public class StationsController : ControllerBase
     {
         var station = await _context.Stations.FindAsync(id, cancellationToken);
 
-        if (station == null){
+        if (station == null)
+        {
             return NotFound();
         }
 
         var stationDto = _mapper.Map<StationDto>(station);
 
         var stationDetails = await _context.Journeys
-        .Where(j => j.DepartureStationId == id || j.ReturnStationId == id)  
-        .GroupBy(j => 1)  
+        .Where(j => j.DepartureStationId == id || j.ReturnStationId == id)
+        .GroupBy(j => 1)
         .Select(g => new
         {
-            DepartureTotalNum = g.Count(j => j.DepartureStationId == id), 
-            ReturnTotalNum = g.Count(j => j.ReturnStationId == id),  
-            AvgDepartureDistance = g.Where(j => j.DepartureStationId == id).Average(j => j.Distance), 
-            AvgDepartureDuration = g.Where(j => j.DepartureStationId == id).Average(j => j.Duration),  
+            DepartureTotalNum = g.Count(j => j.DepartureStationId == id),
+            ReturnTotalNum = g.Count(j => j.ReturnStationId == id),
+            AvgDepartureDistance = g.Where(j => j.DepartureStationId == id).Average(j => j.Distance),
+            AvgDepartureDuration = g.Where(j => j.DepartureStationId == id).Average(j => j.Duration),
         })
         .ToListAsync(cancellationToken);
 
@@ -81,22 +82,22 @@ public class StationsController : ControllerBase
         };
 
         return Ok(result);
-    }
+        }
 
-    [HttpGet("next-available-id")]
-    public async Task<ActionResult> GetNextFreeId()
-    {
-        var maxId = await _context.Stations.MaxAsync(station => station.Id);
-        var nextFreeId = maxId + 1; 
-        return Ok(nextFreeId);
-    }
-    private int SetPageSizeMax10NotNull(int? pageSize)
-    {
-        return pageSize switch
+        [HttpGet("next-available-id")]
+        public async Task<ActionResult> GetNextFreeId()
         {
-            null => 10,        
-            > 10 => 10,       
-            _ => pageSize.Value
-        };
-    }
+            var maxId = await _context.Stations.MaxAsync(station => station.Id);
+            var nextFreeId = maxId + 1; 
+            return Ok(nextFreeId);
+        }
+        private int SetPageSizeMax10NotNull(int? pageSize)
+        {
+            return pageSize switch
+            {
+                null => 10,        
+                > 10 => 10,       
+                _ => pageSize.Value
+            };
+        }
 }

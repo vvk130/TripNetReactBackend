@@ -16,9 +16,9 @@ public record StationDetailsDto
 
     public int JourneysStartingTotal { get; set; }
 
-    public int JourneysStartingAvgDistance { get; set; }
+    public double JourneysStartingAvgDistance { get; set; }
 
-    public int JourneysStartingAvgDuration { get; set; }
+    public double JourneysStartingAvgDuration { get; set; }
 
     public int JourneysEndingTotal { get; set; }
 
