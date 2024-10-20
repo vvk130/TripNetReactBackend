@@ -28,8 +28,8 @@ Simple application to show and search for stations on a map. Since Leaflet bound
 
 ## Pagination, sorting and filtering
 
-See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
-Item ids (exact match) and names and sortable and filterable.
+- See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
+- Item ids (exact match) and names and sortable and filterable.
 
 ## In progress
 
