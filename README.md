@@ -10,31 +10,22 @@ Backend Swagger (exposed in production because this is a porfolio application):
 
 ## Project Technologies
 
-| **Technology**               | **Description**                                                         |
-| ---------------------------- | ----------------------------------------------------------------------- |
-| **.NET Core (ASP.NET Core)** | Modern web api framewrork                                               |
-| **Sieve**                    | Pagination, filtering, sorting                                          |
-| **AutoMapper**               | Easy object mapping to Dtos                                             |
-| **Swagger (Swashbuckle)**    | API documentation                                                       |
-| **Entity Framework Core**    | DB orm                                                                  |
-| **Fluent Api**               | Server side validation                                                  |
-| **ASP.NET Core Identity**    | User login and role management for SPA without delegated authentication |
-| **PostgreSQL**               | DB                                                                      |
-| **React, Typescript**        | Frontend                                                                |
-| **Formik**                   | React form state management without tears                               |
-| **Yup**                      | Form validation for clientside                                          |
-| **Material UI**              | Component library for React                                             |
-| **Leaflet**                  | Map add on                                                              |
-
-## About database
-
-### Benchmarks
-
-### Queries in SQL translated by EF core
+| **Technology**               | **Description**                           |
+| ---------------------------- | ----------------------------------------- |
+| **.NET Core (ASP.NET Core)** | Modern web api framewrork                 |
+| **Sieve**                    | Pagination, filtering, sorting            |
+| **AutoMapper**               | Easy object mapping to Dtos               |
+| **Swagger (Swashbuckle)**    | API documentation                         |
+| **Entity Framework Core**    | DB orm                                    |
+| **Fluent Api**               | Server side validation                    |
+| **PostgreSQL**               | DB                                        |
+| **React, Typescript**        | Frontend                                  |
+| **Formik**                   | React form state management without tears |
+| **Yup**                      | Form validation for clientside            |
+| **Material UI**              | Component library for React               |
+| **Leaflet**                  | Map add on                                |
 
 ## Pagination, sorting and filtering
 
 See sieve documentation to call the api: https://github.com/Biarity/Sieve?tab=readme-ov-file#send-a-request
 Item ids and names and sortable and filterable.
-
-## Self-reflection
