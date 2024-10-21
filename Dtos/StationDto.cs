@@ -1,5 +1,6 @@
 using FluentValidation;
 using Sieve.Attributes;
+using TripNetReactBackend.Interfaces;
 
 namespace TripNetReactBackend.Models;
 
@@ -20,8 +21,14 @@ public record StationDto
 
     public class StationDtoValidator : AbstractValidator<StationDto>
     {
-        public StationDtoValidator()
+        private readonly IStationRepository _stationRepository;
+
+        public StationDtoValidator(IStationRepository stationRepository)
         {
+            _stationRepository = stationRepository;
+            RuleFor(x => x.Id)
+                .Must(stationRepository.IsIdUnique)
+                .WithMessage("The ID must be unique.");
             RuleFor(t => t.StationName).MaximumLength(100);
             RuleFor(t => t.StationAddress).MaximumLength(100);
             RuleFor(s => s.CoordinateX)
@@ -32,9 +39,6 @@ public record StationDto
                 .Matches(@"^-?(?:[0-8]?[0-9]|90)(\.[0-9]{1,16})?$")
                 .WithMessage("Y coordinate needs to be between -90 and 90, and can have up to 16 decimal places.");
         }
-
     }
-
-
 }
 

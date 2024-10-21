@@ -6,6 +6,8 @@ using SievePackage;
 using TripNetReactBackend.Models;
 using FluentValidation.AspNetCore;
 using FluentValidation;
+using TripNetReactBackend.Interfaces;
+using TripNetReactBackend.Repositories;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var assembly = typeof(Program).Assembly;
@@ -34,6 +36,7 @@ builder.Services.AddControllers();
 builder.Services.AddProblemDetails();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssembly(assembly);
+builder.Services.AddScoped<IStationRepository, StationRepository>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString(@"DefaultConnection")));
